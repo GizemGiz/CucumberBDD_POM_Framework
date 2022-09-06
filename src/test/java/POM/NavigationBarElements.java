@@ -10,6 +10,7 @@ public class NavigationBarElements extends  BasePOM{
         PageFactory.initElements(driver, this);
     }
 
+
     @FindBy(xpath = "//span[text()='Setup']/..")
     private WebElement setupButton;
 
@@ -19,9 +20,27 @@ public class NavigationBarElements extends  BasePOM{
     @FindBy(xpath = "//span[text()='Countries']/..")
     private WebElement countriesButton;
 
-    public void navigateToCountriesPage(){
+    @FindBy(xpath = "//span[text()='Citizenships']/..")
+    private WebElement citizenshipButton;
+
+    @FindBy(xpath = "//span[text()='Fees']/..")
+    private WebElement feesButton;
+
+    public void navigateToCountriesPage() {
         setupButton.click();
         parametersButton.click();
         countriesButton.click();
+    }
+
+    public void navigateToCitizenshipPage() {
+        setupButton.click();
+        parametersButton.click();
+        citizenshipButton.click();
+    }
+
+    public void navigateToFeesPage() {
+        setupButton.click();
+        parametersButton.click();
+        feesButton.click();
     }
 }

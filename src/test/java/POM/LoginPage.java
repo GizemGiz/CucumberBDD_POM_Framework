@@ -27,6 +27,8 @@ public class LoginPage extends BasePOM{
         @FindBy(xpath = "(//span[contains(text(),'Dashboard')])[2]")
         private WebElement dashboardText;
 
+
+
         private String username = "richfield.edu";
         private String password = "Richfield2020!";
 
