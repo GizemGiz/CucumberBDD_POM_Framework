@@ -6,10 +6,9 @@ import org.openqa.selenium.support.PageFactory;
 
 public class NavigationBarElements extends  BasePOM{
 
-    public NavigationBarElements(){
+    public NavigationBarElements() {
         PageFactory.initElements(driver, this);
     }
-
 
     @FindBy(xpath = "//span[text()='Setup']/..")
     private WebElement setupButton;

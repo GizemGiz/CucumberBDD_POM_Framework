@@ -11,7 +11,7 @@ public class BasePOM {
     WebDriver driver = Driver.getDriver();
     WebDriverWait wait = new WebDriverWait(driver, 10);
 
-    public void waitUntilVisibleAndClickableThenClick(WebElement element){
+    public void waitUntilVisibleAndClickableThenClick(WebElement element) {
         wait.until(ExpectedConditions.visibilityOf(element));
         wait.until(ExpectedConditions.elementToBeClickable(element));
         element.click();

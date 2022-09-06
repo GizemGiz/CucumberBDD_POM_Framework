@@ -9,7 +9,6 @@ public class CountriesSteps {
     NavigationBarElements navigationBarElements;
     DialogContentElements dialogContentElements;
 
-
     @When("User create Country")
     public void user_create_country() {
         navigationBarElements = new NavigationBarElements();
@@ -42,7 +41,6 @@ public class CountriesSteps {
 
         navigationBarElements.navigateToCountriesPage();
         dialogContentElements.deleteCountry();
-
     }
 
 }

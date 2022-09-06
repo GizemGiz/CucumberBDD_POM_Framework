@@ -9,14 +9,14 @@ import org.testng.Assert;
 
 import java.util.Locale;
 
-public class DialogContentElements extends BasePOM{
+public class DialogContentElements extends BasePOM {
 
-    public DialogContentElements(){
+    public DialogContentElements() {
 
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//ms-add-button[contains(@tooltip,'TITLE.ADD')]")
+    @FindBy(xpath = "//ms-add-button[contains(@tooltip,'TITLE.ADD')]//button")
     private WebElement addButton;
 
     @FindBy(xpath = "//ms-text-field[@formcontrolname='name']//input")
@@ -40,7 +40,7 @@ public class DialogContentElements extends BasePOM{
     @FindBy(xpath = "//ms-edit-button//button")
     private WebElement editButton;
 
-    @FindBy(xpath = "//ms-delte-button//button")
+    @FindBy(xpath = "//ms-delete-button//button")
     private WebElement deleteButton;
 
     @FindBy(xpath = "//button[@type='submit']")
@@ -55,8 +55,9 @@ public class DialogContentElements extends BasePOM{
     @FindBy(xpath = "//ms-text-field[@formcontrolname='budgetAccountIntegrationCode']//input")
     private WebElement integrationCodeInput;
 
-    @FindBy(xpath = "//ms-integer-field[@formcontrolname='")
+    @FindBy(xpath = "//ms-integer-field[@formcontrolname='priority']//input")
     private WebElement priorityInput;
+
 
     public void createCountry(){
         addButton.click();
@@ -64,15 +65,14 @@ public class DialogContentElements extends BasePOM{
         codeInput.sendKeys("GZM93");
         saveButton.click();
     }
-    public void validateSuccessMessage(){
+    public void validateSuccessMessage() {
         wait.until(ExpectedConditions.visibilityOf(successMessage));
         Assert.assertTrue(successMessage.isDisplayed());
         Assert.assertTrue(successMessage.getText().toLowerCase().contains("successfully"));
-
     }
 
     public void editCountry(){
-        nameSearchInput.sendKeys("GizemTestCountry6");
+        nameSearchInput.sendKeys("GizemCountry");
         searchButton.click();
         editButton.click();
         nameInput.clear();
